@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Learning Managament System | JoyLearn</title>
+    <!-- Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fas Fa Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              black: "#1E2A38",
+              primary: "#F9FCFE",
+              secondary: "#406794",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .circular-progress {
+        background: conic-gradient(
+          #4ade80 calc(var(--percentage) * 1%),
+          #e5e7eb 0
+        );
+      }
+    </style>
+  </head>
+  <body class="font-['Poppins']">
+    <main class="flex bg-primary">
+      <!-- Start Sidebar -->
+      <aside
+        id="sidebar"
+        class="bg-sidebar bg-white text-stone-900 w-64 fixed inset-y-0 left-0 transform -translate-x-full transition-transform md:translate-x-0 md:relative md:flex md:flex-col md:w-64 shadow-xl z-30"
+      >
+        <div class="flex items-center justify-center mt-6">
+          <figure class="flex items-center">
+            <img src="./src/img/logo.png" alt="logo-JoyL" class="h-8 w-8" />
+            <figcaption class="font-bold text-2xl ml-2">JoyLearn</figcaption>
+          </figure>
+        </div>
+
+        <nav
+          class="flex flex-col gap-1 text-base font-semibold mt-8 px-4 text-secondary"
+        >
+          <a
+            href="/"
+            class="flex items-center py-3 pl-4 nav-item bg-secondary text-primary rounded transition-all"
+          >
+            <i class="fas fa-home mr-3"></i>
+            Dashboard
+          </a>
+          <a
+            href="./pages/course.html"
+            class="flex items-center my-2 py-3 pl-4 nav-item hover:bg-secondary hover:text-primary rounded transition-all"
+          >
+            <i class="fas fa-database mr-3"></i>
+            Course
+          </a>
+          <a
+            href="./pages/profile.html"
+            class="flex items-center py-3 pl-4 nav-item hover:bg-secondary hover:text-primary rounded transition-all"
+          >
+            <i class="fas fa-user mr-3"></i>
+            Profile
+          </a>
+        </nav>
+      </aside>
+      <!-- Overlay untuk mobile -->
+      <div
+        id="overlay"
+        class="fixed z-20 inset-0 bg-black opacity-50 hidden md:hidden"
+      ></div>
+      <!-- end sidebar -->
+
+      <!-- main content -->
+      <div class="w-full overflow-x-hidden h-screen p-4">
+        <!-- start header -->
+        <div
+          class="py-4 px-4 flex justify-between items-center border-b border-[#406794] shadow-sm"
+        >
+          <div class="flex items-center space-x-2">
+            <!-- Mobile Navbar Button -->
+            <button
+              id="menu-btn"
+              class="md:hidden p-3 text-white bg-secondary rounded focus:outline-none"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <p class="text-2xl md:text-3xl lg:text-4xl">
+              <span class="font-bold">Hai!</span>Rahmang👋
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-[#406794]">
+            <div
+              class="hidden md:block bg-primary px-2 flex items-center rounded-md border border-[#406794]"
+            >
+              <input
+                type="text"
+                placeholder="Search..."
+                class="px-4 py-2 border-0 focus:outline-0"
+              />
+              <i class="fa fa-search text-xl"></i>
+            </div>
+            <div>
+              <i class="fa fa-bell text-xl" aria-hidden="true" class=""></i>
+            </div>
+          </div>
+        </div>
+        <!-- end header -->
+
+        <!-- Hero Section -->
+        <section
+          class="w-full border border-secondary mt-4 md:mt-6 lg:mt-10 rounded-lg flex flex-col md:flex-row md:items-center justify-around gap-2 relative p-4 overflow-hidden"
+        >
+          <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          >
+            <img src="./src/img/blur-circle.png" alt="blur-assets" />
+          </div>
+          <div class="hidden lg:block">
+            <img src="./src/img/hand-pencil.png" alt="tangan-memegang-pulpen" />
+          </div>
+          <div class="flex flex-col gap-4 relative z-10 text-center md:text-left">
+            <h3 class="text-2xl font-bold">Homework 0/5</h3>
+            <p class="w-full md:max-w-56 mx-auto">
+              Ayo nih, ada 5 tugas yang belum
+              selesai. Buruan dikerjain yaa
+            </p>
+            <a href="#" class="text-secondary underline">
+              More Info <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div
+            class="overflow-x-auto md:overflow-y-auto max-h-[210px] flex md:flex-col gap-4"
+            style="scrollbar-color: transparent transparent"
+          >
+          <!-- Card Tugas -->
+            <div
+              class="w-[320px] lg:w-[520px] text-justify bg-white flex flex-col lg:flex-row gap-2 items-center justify-between py-6 px-4 rounded-md border"
+            >
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fas fa-graduation-cap text-4xl"> </i>
+                </div>
+                <div>
+                  <p class="text-lg md:text-xl font-bold">Pengenalan UI/UX</p>
+                  <p class="text-sm">Deadline: 1 Days Left</p>
+                </div>
+              </div>
+              <div>
+                <button class="bg-secondary text-primary px-2 py-1 md:px-4 md:py-2 rounded-md">
+                  Selesaikan!
+                </button>
+              </div>
+            </div>
+          <!-- Card Tugas -->
+            <div
+              class="w-[320px] lg:w-[520px] text-justify bg-white flex flex-col lg:flex-row gap-2 items-center justify-between py-6 px-4 rounded-md border"
+            >
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fas fa-graduation-cap text-4xl"> </i>
+                </div>
+                <div>
+                  <p class="text-lg md:text-xl font-bold">UI/UX Responsive</p>
+                  <p class="text-sm">Deadline: 1 Days Left</p>
+                </div>
+              </div>
+              <div>
+                <button class="bg-secondary text-primary px-4 py-2 rounded-md">
+                  Selesaikan!
+                </button>
+              </div>
+            </div>
+          <!-- Card Tugas -->
+            <div
+              class="w-[320px] lg:w-[520px] text-justify bg-white flex flex-col lg:flex-row gap-2 items-center justify-between py-6 px-4 rounded-md border"
+            >
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fas fa-graduation-cap text-4xl"> </i>
+                </div>
+                <div>
+                  <p class="text-lg md:text-xl font-bold">HTML & CSS</p>
+                  <p class="text-sm">Deadline: 2 Days Left</p>
+                </div>
+              </div>
+              <div>
+                <button class="bg-secondary text-primary px-4 py-2 rounded-md">
+                  Selesaikan!
+                </button>
+              </div>
+            </div>
+          <!-- Card Tugas -->
+            <div
+              class="w-[320px] lg:w-[520px] text-justify bg-white flex flex-col lg:flex-row gap-2 items-center justify-between py-6 px-4 rounded-md border"
+            >
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fas fa-graduation-cap text-4xl"> </i>
+                </div>
+                <div>
+                  <p class="text-lg md:text-xl font-bold">Software Engineering</p>
+                  <p class="text-sm">Deadline: 1 Days Left</p>
+                </div>
+              </div>
+              <div>
+                <button class="bg-secondary text-primary px-4 py-2 rounded-md">
+                  Selesaikan!
+                </button>
+              </div>
+            </div>
+          <!-- Card Tugas -->
+            <div
+              class="w-[320px] lg:w-[520px] text-justify bg-white flex flex-col lg:flex-row gap-2 items-center justify-between py-6 px-4 rounded-md border"
+            >
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fas fa-graduation-cap text-4xl"> </i>
+                </div>
+                <div>
+                  <p class="text-lg md:text-xl font-bold">UX Design Fundamentals</p>
+                  <p class="text-sm">Deadline: 1 Days Left</p>
+                </div>
+              </div>
+              <div>
+                <button class="bg-secondary text-primary px-4 py-2 rounded-md">
+                  Selesaikan!
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Hero Section -->
+        
+        <!-- Section #2 Track dan Course -->
+        <section class="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mt-4">
+          <!-- Progress card -->
+          <div class="col-span-12 md:col-span-4 lg:col-span-2 flex flex-col gap-2">
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold">Progress</h3>
+            </div>
+            <div class="bg-white h-[80%] p-6 border rounded-lg text-center">
+              <div>
+                <p>Track Record</p>
+              </div>
+              <div class="flex flex-col justify-center items-center">
+                <div class="relative mt-4">
+                  <div
+                    class="circular-progress w-20 h-20 rounded-full flex items-center justify-center relative"
+                    style="--percentage: 84"
+                  >
+                    <span class="text-xl font-bold absolute z-10 text-primary"
+                      >84%
+                    </span>
+                  </div>
+                  <div
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div class="w-16 h-16 bg-secondary rounded-full"></div>
+                  </div>
+                </div>
+                <p class="text-sm mt-2 text-secondary font-bold">
+                  Excelent <br />
+                  ⭐⭐⭐⭐⭐
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Courses Card -->
+          <div class="col-span-12 md:col-span-8 lg:col-span-10 flex flex-col gap-2">
+            <div>
+              <h3 class="text-xl md:text-2xl font-bold">Enrolled Courses</h3>
+            </div>
+            <!-- Container Course Card -->
+            <div
+              class="flex overflow-x-auto gap-4"
+              style="scrollbar-color: transparent transparent"
+            >
+              <!-- Card -->
+              <div 
+                class="bg-white h-full rounded-lg border max-w-md flex items-center p-6 gap-4 min-w-[400px]"
+              >
+                <div class="flex flex-col gap-2">
+                  <div class="relative">
+                    <div
+                      class="circular-progress w-20 h-20 rounded-full flex items-center justify-center relative"
+                      style="--percentage: 40"
+                    >
+                      <span class="text-xl font-bold absolute z-10 text-primary"
+                        ><svg
+                          width="22"
+                          height="30"
+                          viewBox="0 0 22 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.2675 1.16992H6.65619C4.10946 1.16992 2.04492 3.23446 2.04492 5.78119C2.04492 8.32793 4.10946 10.3925 6.65619 10.3925M11.2675 1.16992H15.8787C18.4255 1.16992 20.49 3.23446 20.49 5.78119C20.49 8.32793 18.4255 10.3925 15.8787 10.3925H11.2675M11.2675 1.16992V10.3925M11.2675 10.3925H6.65619M11.2675 10.3925V19.615M6.65619 10.3925C4.10946 10.3925 2.04492 12.457 2.04492 15.0037C2.04492 17.5505 4.10946 19.615 6.65619 19.615M11.2675 19.615H6.65619M11.2675 19.615V24.2263C11.2675 26.773 9.20293 28.8376 6.65619 28.8376C4.10946 28.8376 2.04492 26.773 2.04492 24.2263C2.04492 21.6795 4.10946 19.615 6.65619 19.615M20.49 15.1959C20.49 17.6365 18.5115 19.615 16.0709 19.615C13.6303 19.615 11.6517 17.6365 11.6517 15.1959C11.6517 12.7553 13.6303 10.7767 16.0709 10.7767C18.5115 10.7767 20.49 12.7553 20.49 15.1959Z"
+                            stroke="#F9FCFE"
+                            stroke-width="2.30564"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div class="w-16 h-16 bg-secondary rounded-full"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-center font-bold text-2xl mt-1">40%</p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-lg font-bold text-secondary">
+                      Beginner UI / UX with Figma
+                    </h2>
+                    <div class="flex flex-wrap max-w-md gap-x-4 gap-y-1">
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-clock"></i>
+                        <p>5:30 Hours</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-book"></i>
+                        <p>10 Lessons</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p>Begginer</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-xs text-justify leading-normal">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Laboriosam mollitia nesciunt ex quaerat nisi
+                        porro?
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex justify-end">
+                    <button
+                      class="bg-secondary text-white px-4 py-1.5 rounded-md hover:bg-secondary/60"
+                    >
+                      Detail <i class="fa-solid fa-arrow-r"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div
+                class="bg-white h-full rounded-lg border max-w-md flex items-center p-6 gap-4 min-w-[400px]"
+              >
+                <div class="flex flex-col gap-2">
+                  <div class="relative">
+                    <div
+                      class="circular-progress w-20 h-20 rounded-full flex items-center justify-center relative"
+                      style="--percentage: 74"
+                    >
+                      <span class="text-xl font-bold absolute z-10 text-primary"
+                        ><svg
+                          width="22"
+                          height="30"
+                          viewBox="0 0 22 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.2675 1.16992H6.65619C4.10946 1.16992 2.04492 3.23446 2.04492 5.78119C2.04492 8.32793 4.10946 10.3925 6.65619 10.3925M11.2675 1.16992H15.8787C18.4255 1.16992 20.49 3.23446 20.49 5.78119C20.49 8.32793 18.4255 10.3925 15.8787 10.3925H11.2675M11.2675 1.16992V10.3925M11.2675 10.3925H6.65619M11.2675 10.3925V19.615M6.65619 10.3925C4.10946 10.3925 2.04492 12.457 2.04492 15.0037C2.04492 17.5505 4.10946 19.615 6.65619 19.615M11.2675 19.615H6.65619M11.2675 19.615V24.2263C11.2675 26.773 9.20293 28.8376 6.65619 28.8376C4.10946 28.8376 2.04492 26.773 2.04492 24.2263C2.04492 21.6795 4.10946 19.615 6.65619 19.615M20.49 15.1959C20.49 17.6365 18.5115 19.615 16.0709 19.615C13.6303 19.615 11.6517 17.6365 11.6517 15.1959C11.6517 12.7553 13.6303 10.7767 16.0709 10.7767C18.5115 10.7767 20.49 12.7553 20.49 15.1959Z"
+                            stroke="#F9FCFE"
+                            stroke-width="2.30564"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div class="w-16 h-16 bg-secondary rounded-full"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-center font-bold text-2xl mt-1">74%</p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-lg font-bold text-secondary">
+                      Beginner UI / UX with Figma
+                    </h2>
+                    <div class="flex flex-wrap max-w-md gap-x-4 gap-y-1">
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-clock"></i>
+                        <p>5:30 Hours</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-book"></i>
+                        <p>10 Lessons</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p>Begginer</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-xs text-justify leading-normal">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Laboriosam mollitia nesciunt ex quaerat nisi
+                        porro?
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex justify-end">
+                    <button
+                      class="bg-secondary text-white px-4 py-1.5 rounded-md hover:bg-secondary/60"
+                    >
+                      Detail <i class="fa-solid fa-arrow-r"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div
+                class="bg-white h-full rounded-lg border max-w-md flex items-center p-6 gap-4 min-w-[400px]"
+              >
+                <div class="flex flex-col gap-2">
+                  <div class="relative">
+                    <div
+                      class="circular-progress w-20 h-20 rounded-full flex items-center justify-center relative"
+                      style="--percentage: 74"
+                    >
+                      <span class="text-xl font-bold absolute z-10 text-primary"
+                        ><svg
+                          width="22"
+                          height="30"
+                          viewBox="0 0 22 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.2675 1.16992H6.65619C4.10946 1.16992 2.04492 3.23446 2.04492 5.78119C2.04492 8.32793 4.10946 10.3925 6.65619 10.3925M11.2675 1.16992H15.8787C18.4255 1.16992 20.49 3.23446 20.49 5.78119C20.49 8.32793 18.4255 10.3925 15.8787 10.3925H11.2675M11.2675 1.16992V10.3925M11.2675 10.3925H6.65619M11.2675 10.3925V19.615M6.65619 10.3925C4.10946 10.3925 2.04492 12.457 2.04492 15.0037C2.04492 17.5505 4.10946 19.615 6.65619 19.615M11.2675 19.615H6.65619M11.2675 19.615V24.2263C11.2675 26.773 9.20293 28.8376 6.65619 28.8376C4.10946 28.8376 2.04492 26.773 2.04492 24.2263C2.04492 21.6795 4.10946 19.615 6.65619 19.615M20.49 15.1959C20.49 17.6365 18.5115 19.615 16.0709 19.615C13.6303 19.615 11.6517 17.6365 11.6517 15.1959C11.6517 12.7553 13.6303 10.7767 16.0709 10.7767C18.5115 10.7767 20.49 12.7553 20.49 15.1959Z"
+                            stroke="#F9FCFE"
+                            stroke-width="2.30564"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div class="w-16 h-16 bg-secondary rounded-full"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-center font-bold text-2xl mt-1">74%</p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-lg font-bold text-secondary">
+                      Beginner UI / UX with Figma
+                    </h2>
+                    <div class="flex flex-wrap max-w-md gap-x-4 gap-y-1">
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-clock"></i>
+                        <p>5:30 Hours</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-book"></i>
+                        <p>10 Lessons</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p>Begginer</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-xs text-justify leading-normal">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Laboriosam mollitia nesciunt ex quaerat nisi
+                        porro?
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex justify-end">
+                    <button
+                      class="bg-secondary text-white px-4 py-1.5 rounded-md hover:bg-secondary/60"
+                    >
+                      Detail <i class="fa-solid fa-arrow-r"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div
+                class="bg-white h-full rounded-lg border max-w-md flex items-center p-6 gap-4 min-w-[400px]"
+              >
+                <div class="flex flex-col gap-2">
+                  <div class="relative">
+                    <div
+                      class="circular-progress w-20 h-20 rounded-full flex items-center justify-center relative"
+                      style="--percentage: 74"
+                    >
+                      <span class="text-xl font-bold absolute z-10 text-primary"
+                        ><svg
+                          width="22"
+                          height="30"
+                          viewBox="0 0 22 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.2675 1.16992H6.65619C4.10946 1.16992 2.04492 3.23446 2.04492 5.78119C2.04492 8.32793 4.10946 10.3925 6.65619 10.3925M11.2675 1.16992H15.8787C18.4255 1.16992 20.49 3.23446 20.49 5.78119C20.49 8.32793 18.4255 10.3925 15.8787 10.3925H11.2675M11.2675 1.16992V10.3925M11.2675 10.3925H6.65619M11.2675 10.3925V19.615M6.65619 10.3925C4.10946 10.3925 2.04492 12.457 2.04492 15.0037C2.04492 17.5505 4.10946 19.615 6.65619 19.615M11.2675 19.615H6.65619M11.2675 19.615V24.2263C11.2675 26.773 9.20293 28.8376 6.65619 28.8376C4.10946 28.8376 2.04492 26.773 2.04492 24.2263C2.04492 21.6795 4.10946 19.615 6.65619 19.615M20.49 15.1959C20.49 17.6365 18.5115 19.615 16.0709 19.615C13.6303 19.615 11.6517 17.6365 11.6517 15.1959C11.6517 12.7553 13.6303 10.7767 16.0709 10.7767C18.5115 10.7767 20.49 12.7553 20.49 15.1959Z"
+                            stroke="#F9FCFE"
+                            stroke-width="2.30564"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div class="w-16 h-16 bg-secondary rounded-full"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="text-center font-bold text-2xl mt-1">74%</p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-1">
+                    <h2 class="text-lg font-bold text-secondary">
+                      Beginner UI / UX with Figma
+                    </h2>
+                    <div class="flex flex-wrap max-w-md gap-x-4 gap-y-1">
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-clock"></i>
+                        <p>5:30 Hours</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-book"></i>
+                        <p>10 Lessons</p>
+                      </div>
+                      <div
+                        class="text-sm flex items-center gap-2 font-light text-black/80"
+                      >
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p>Begginer</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="text-xs text-justify leading-normal">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Laboriosam mollitia nesciunt ex quaerat nisi
+                        porro?
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex justify-end">
+                    <button
+                      class="bg-secondary text-white px-4 py-1.5 rounded-md hover:bg-secondary/60"
+                    >
+                      Detail <i class="fa-solid fa-arrow-r"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Section #2 Track dan Course -->
+
+        <!-- Section #3 Pengumuman Tugas -->
+        <section class="flex flex-col gap-2 mt-4">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold">Informasi Lainnya</h3>
+          </div>
+          <div class="bg-white h-[80%] p-6 border rounded-lg">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-2">
+              <div>
+                <p>Pengumuman Tugas</p>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button
+                  class="filter-btn px-4 py-1 rounded-full text-primary border bg-secondary"
+                  data-status="semua"
+                  onclick="filterTasks('semua', this)"
+                >
+                  Semua
+                </button>
+                <button
+                  class="filter-btn px-4 py-1 rounded-full text-secondary border border-secondary"
+                  data-status="jatuh-tempo"
+                  onclick="filterTasks('jatuh-tempo', this)"
+                >
+                  Jatuh Tempo
+                </button>
+                <button
+                  class="filter-btn px-4 py-1 rounded-full text-secondary border border-secondary"
+                  data-status="belum-selesai"
+                  onclick="filterTasks('belum-selesai', this)"
+                >
+                  Belum Selesai
+                </button>
+                <button
+                  class="filter-btn px-4 py-1 rounded-full text-secondary border border-secondary"
+                  data-status="selesai"
+                  onclick="filterTasks('selesai', this)"
+                >
+                  Selesai
+                </button>
+              </div>
+            </div>
+
+            <div id="task-container" class="mt-4 flex flex-col space-y-2">
+              <!-- Tugas Belum Selesai -->
+              <div
+                class="flex justify-between border p-4 rounded-md bg-yellow-200/30 border-yellow-400"
+                data-status="belum-selesai"
+              >
+                <div class="flex items-center space-x-2">
+                  <div class="bg-yellow-800/10 p-2 rounded-md">
+                    <svg
+                      width="22"
+                      height="30"
+                      viewBox="0 0 22 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.2675 1.16992H6.65619C4.10946 1.16992 2.04492 3.23446 2.04492 5.78119C2.04492 8.32793 4.10946 10.3925 6.65619 10.3925M11.2675 1.16992H15.8787C18.4255 1.16992 20.49 3.23446 20.49 5.78119C20.49 8.32793 18.4255 10.3925 15.8787 10.3925H11.2675M11.2675 1.16992V10.3925M11.2675 10.3925H6.65619M11.2675 10.3925V19.615M6.65619 10.3925C4.10946 10.3925 2.04492 12.457 2.04492 15.0037C2.04492 17.5505 4.10946 19.615 6.65619 19.615M11.2675 19.615H6.65619M11.2675 19.615V24.2263C11.2675 26.773 9.20293 28.8376 6.65619 28.8376C4.10946 28.8376 2.04492 26.773 2.04492 24.2263C2.04492 21.6795 4.10946 19.615 6.65619 19.615M20.49 15.1959C20.49 17.6365 18.5115 19.615 16.0709 19.615C13.6303 19.615 11.6517 17.6365 11.6517 15.1959C11.6517 12.7553 13.6303 10.7767 16.0709 10.7767C18.5115 10.7767 20.49 12.7553 20.49 15.1959Z"
+                        class="stroke-yellow-800"
+                        stroke-width="2.30564"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xl font-bold text-yellow-800">UI UX</p>
+                    <p class="text-sm">Due Date: 10 Oktober 2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2 text-yellow-800">
+                  <p class="text-right">Belum Dijawab Nih</p>
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+              </div>
+
+              <!-- Tugas Selesai -->
+              <div
+                class="flex justify-between border p-4 rounded-md bg-green-200/30 border-green-400"
+                data-status="selesai"
+              >
+                <div class="flex items-center space-x-2">
+                  <div class="bg-green-800/10 p-2 rounded-md">
+                                        <svg
+                      width="22"
+                      height="30"
+                      viewBox="0 0 22 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.2675 1.16992H6.65619C4.10946 1.16992 2.04492 3.23446 2.04492 5.78119C2.04492 8.32793 4.10946 10.3925 6.65619 10.3925M11.2675 1.16992H15.8787C18.4255 1.16992 20.49 3.23446 20.49 5.78119C20.49 8.32793 18.4255 10.3925 15.8787 10.3925H11.2675M11.2675 1.16992V10.3925M11.2675 10.3925H6.65619M11.2675 10.3925V19.615M6.65619 10.3925C4.10946 10.3925 2.04492 12.457 2.04492 15.0037C2.04492 17.5505 4.10946 19.615 6.65619 19.615M11.2675 19.615H6.65619M11.2675 19.615V24.2263C11.2675 26.773 9.20293 28.8376 6.65619 28.8376C4.10946 28.8376 2.04492 26.773 2.04492 24.2263C2.04492 21.6795 4.10946 19.615 6.65619 19.615M20.49 15.1959C20.49 17.6365 18.5115 19.615 16.0709 19.615C13.6303 19.615 11.6517 17.6365 11.6517 15.1959C11.6517 12.7553 13.6303 10.7767 16.0709 10.7767C18.5115 10.7767 20.49 12.7553 20.49 15.1959Z"
+                        class="stroke-green-800"
+                        stroke-width="2.30564"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xl font-bold text-green-800">Frontend Dev</p>
+                    <p class="text-sm">Completed on: 1 Oktober 2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2 text-green-800">
+                  <p class="text-right">Sudah Dijawab</p>
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+              </div>
+
+              <!-- Tugas Jatuh Tempo -->
+              <div
+                class="flex justify-between border p-4 rounded-md bg-red-200/30 border-red-400"
+                data-status="jatuh-tempo"
+              >
+                <div class="flex items-center space-x-2">
+                  <div class="bg-red-800/10 p-2 rounded-md">
+                                        <svg
+                      width="22"
+                      height="30"
+                      viewBox="0 0 22 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.2675 1.16992H6.65619C4.10946 1.16992 2.04492 3.23446 2.04492 5.78119C2.04492 8.32793 4.10946 10.3925 6.65619 10.3925M11.2675 1.16992H15.8787C18.4255 1.16992 20.49 3.23446 20.49 5.78119C20.49 8.32793 18.4255 10.3925 15.8787 10.3925H11.2675M11.2675 1.16992V10.3925M11.2675 10.3925H6.65619M11.2675 10.3925V19.615M6.65619 10.3925C4.10946 10.3925 2.04492 12.457 2.04492 15.0037C2.04492 17.5505 4.10946 19.615 6.65619 19.615M11.2675 19.615H6.65619M11.2675 19.615V24.2263C11.2675 26.773 9.20293 28.8376 6.65619 28.8376C4.10946 28.8376 2.04492 26.773 2.04492 24.2263C2.04492 21.6795 4.10946 19.615 6.65619 19.615M20.49 15.1959C20.49 17.6365 18.5115 19.615 16.0709 19.615C13.6303 19.615 11.6517 17.6365 11.6517 15.1959C11.6517 12.7553 13.6303 10.7767 16.0709 10.7767C18.5115 10.7767 20.49 12.7553 20.49 15.1959Z"
+                        class="stroke-yellow-800"
+                        stroke-width="2.30564"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xl font-bold text-red-800">
+                      Database Design
+                    </p>
+                    <p class="text-sm">Due Date: 15 Oktober 2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2 text-red-800">
+                  <p class="text-right">Sudah Jatuh Tempo</p>
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const menuBtn = document.getElementById("menu-btn");
+      const overlay = document.getElementById("overlay");
+
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("-translate-x-full");
+        overlay.classList.toggle("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+
+      function filterTasks(status, button) {
+        const tasks = document.querySelectorAll("#task-container > div");
+        tasks.forEach((task) => {
+          if (
+            task.getAttribute("data-status") === status ||
+            status == "semua"
+          ) {
+            task.style.display = "flex";
+          } else {
+            task.style.display = "none";
+          }
+        });
+
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach((btn) => {
+          btn.classList.remove("bg-secondary", "text-white");
+          btn.classList.add("text-secondary", "border-secondary");
+        });
+
+        button.classList.remove("text-primary", "border-secondary");
+        button.classList.add("bg-secondary", "text-white");
+      }
+    </script>
+  </body>
+</html>
