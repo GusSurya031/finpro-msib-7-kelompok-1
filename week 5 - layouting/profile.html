@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    .html,body {
+      font-family: 'Quicksand';
+    }
+    .profile-header {
+            background-color: #868687;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            height: 250px;
+            border-radius: 20px;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            transform: translate(50px,0px);
+        }
+        .join-info {
+            font-size: 0.8rem;
+            color: #cccccc;
+            transform: translate(50px,0px);
+        }
+        .nama {
+          transform: translate(50px,0px);
+          font-weight: bold;
+          margin: 0;
+        }
+
+        
+  </style>
+
+</head>
+<body>
+    <div class="main-container d-flex">
+        <div class="sidebar" id="side_nav">
+          <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
+            <h1 class="fs-4"><span class="bg-white text-dark rounded shadow px-2 me-2 fw-bold" >TA</span> <span class="text-white">Tech Academy </span></h1>
+            <button class="btn d-md-none d-block close-btn px-1 py-0 text-white"><i class="fa-solid fa-bars"></i></button>
+          </div>  
+      
+          <ul class="list-unstyled px-2">
+            <li class="active"><a href="profile.html" class="text-decoration-none px-3 py-2 d-block "><i class="fa-regular fa-user"></i> My Profile</a></li>
+            <li class=""><a href="mycourse.html" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-book-open"></i></i> My Courses</a></li>
+            <li class=""><a href="assigment.html" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-list-check"></i> Assigmnets</a></li>
+           
+          </ul>
+          <hr class="h-color mx-2">
+      
+          
+      
+        </div>
+        <div class="content">
+          <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container-fluid">
+              <div class="d-flex justify-content-between d-md-none d-block">
+                <button class="btn px-1 py-0 open-btn me-2"><i class="fa-solid fa-bars"></i></button>
+                <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white fw-bold">TA</span></a>
+      
+              </div> 
+              
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link " href="profile.html"><i class="fa-regular fa-user"></i> </a>
+                  </li>
+      
+                </ul>
+      
+              </div>
+            </div>
+          </nav>
+      
+          <div class="dashboard-content px-3 pt-3" >
+            <h2 class="fs-5 bg-dark text-light p-3 text-start fw-bold" style=" display: inline-block;" > MY PROFILE</h2>
+            <div class="container-fluid profile-header d-flex flex-wrap" style="align-items: center;">
+              <img src="img/bromo.jpg"  alt="Gambar Profil" class="profile-image">
+              <div>
+                  <h2 class="nama">Abdillaah</h2>
+                  <p class="join-info"><i class="fa-solid fa-right-to-bracket"></i> Bergabung sejak 2022 <br> <i class="fa-solid fa-location-dot"></i>  Kota Jakarta timur </p>
+              </div>
+           </div>
+           <div class="tabs mt-2">
+            <nav>
+              <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                <button class="nav-link active text-dark" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Kursus selesai</button>
+                <button class="nav-link text-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Kursus berjalan</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="kartu mt-2 d-flex flex-wrap ">
+
+                  <div class="card m-2" style="width: 18rem;">
+                    <img src="img/bromo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <h5 class="card-title fw-bold">Pemrograman Web</h5>
+                      <div class="progress mt-1 mb-1">
+                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100 %</div>
+                      </div>
+
+                      <p class="card-text">Pelajari komponen-komponen dasar HTML dan CSS yang merupakan fondasi utama untuk menjadi front-end web developer.</p>
+                      <a href="#" class="btn btn btn-outline-success fw-bold mt-auto">SELESAI</a>
+                    </div>
+                  </div>
+
+                  <div class="card m-2" style="width: 18rem;">
+                    <img src="img/bromo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <h5 class="card-title fw-bold">Pemrograman JavaScript</h5>
+                      <div class="progress mt-1 mb-1">
+                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100 %</div>
+                      </div>
+
+                      <p class="card-text">Pelajari dasar JavaScript, dari fundamental, sintaks dan fitur ES6, hingga konsep automation test menggunakan framework populer.</p>
+                      <a href="#" class="btn btn btn-outline-success fw-bold mt-auto">SELESAI</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="card m-2" style="width: 18rem;">
+                  <img src="img/bromo.jpg" class="card-img-top" alt="...">
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title fw-bold">Front-End Web Pemula</h5>
+                    <div class="progress mt-1 mb-1">
+                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70 %</div>
+                    </div>
+
+                    <p class="card-text">Pelajari materi mengenai DOM manipulation, Event, dan Web Storage untuk meningkatkan fungsionalitas dan interaktifitas pada website Anda.</p>
+                    <a href="assigment.html" class="btn btn btn-outline-success fw-bold mt-auto">Lanjutkan</a>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+           </div>
+          </div>
+        </div>
+    </div> 
+
+    <footer class=" text-white text-center p-4" style="background-color: #343131;">
+        <div class="container">
+            <p>© 2023 Rakamin Academy. IT Full Stack Web Developer.</p>
+            <a href="#" class="text-white">Kebijakan Privasi</a> |
+            <a href="#" class="text-white">Ketentuan Layanan</a>
+        </div>
+    </footer>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+     $(".sidebar ul li").on('click', function () {
+            $(".sidebar ul li.active").removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.open-btn').on('click', function () {
+            $('.sidebar').addClass('active');
+
+        });
+
+
+        $('.close-btn').on('click', function () {
+            $('.sidebar').removeClass('active');
+
+        })
+
+    </script>
+</body>
+</html>
