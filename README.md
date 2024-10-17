@@ -7,8 +7,6 @@ Universitas : Universitas Udayana
 Angkatan    : 2022 
 Cita-Cita   : Fullstack developer
 
-
-
 Nama : abdillaah
 Jurusan : Teknologi Informasi
 Fakultas : Teknik dan Informatika
