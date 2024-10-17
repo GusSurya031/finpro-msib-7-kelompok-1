@@ -1,27 +1,38 @@
 # finpro-msib-7-kelompok-1
 
-Nama    : I Ngurah Komang Agus Suryadiyatmika. S <br>
-Program Studi : Informatika <br>
-Fakultas    : Matematika dan Ilmu Pengetahuan Alam <br>
-Universitas : Universitas Udayana <br>
-Angkatan    : 2022 <br>
-Cita-Cita   : Fullstack developer <br>
 
-Nama : abdillaah <br>
-univ : Universitas Bina sarana informatika <br>
-Jurusan : Teknologi Informasi <br>
-Fakultas : Teknik dan Informatika <br>
-Pekerjaan impian : Front end dev <br>
-angkatan : 2022 <br>
 
-Nama : Hilham Yulistio <br>
-Jurusan : Sistem Informasi <br>
-Universitas : STMIK Jakarta STI&K <br>
-Angkatan : 2022 <br>
-Cita-Cita : Fullstack Developer <br>
+# finpro-msib-7-kelompok-1
 
-Nama : Damar Galih <br>
-Jurusan : Informatika <br>
-Universitas : Universitas Amikom Yogyakarta <br>
-Angkatan : 2022 <br>
-Cita-Cita : Fullstack Developer <br>
+Nama    : I Ngurah Komang Agus Suryadiyatmika. S
+Program Studi : Informatika
+Fakultas    : Matematika dan Ilmu Pengetahuan Alam
+Universitas : Universitas Udayana
+Angkatan    : 2022 
+Cita-Cita   : Fullstack developer
+
+Nama: Naufal Fahmi Kartika
+Jurusan: Teknik Informatika
+Fakultas: Komunikasi dan Informatika
+Universitas: Universitas Muhammadiyah Surakarta
+Angkatan: 2022
+Pekerjaan impian: Fullstack Web Developer
+
+Nama : abdillaah
+univ : Universitas Bina sarana informatika
+Jurusan : Teknologi Informasi
+Fakultas : Teknik dan Informatika
+Pekerjaan impian : Front end dev
+angkatan : 2022
+
+Nama : Hilham Yulistio
+Jurusan : Sistem Informasi
+Universitas : STMIK Jakarta STI&K
+Angkatan : 2022
+Cita-Cita : Fullstack Developer
+
+Nama : Damar Galih
+Jurusan : Informatika
+Universitas : Universitas Amikom Yogyakarta
+Angkatan : 2022
+Cita-Cita : Fullstack Developer
