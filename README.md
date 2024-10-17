@@ -11,6 +11,13 @@ Universitas : Universitas Udayana
 Angkatan    : 2022 
 Cita-Cita   : Fullstack developer
 
+Nama: Naufal Fahmi Kartika
+Jurusan: Teknik Informatika
+Fakultas: Komunikasi dan Informatika
+Universitas: Universitas Muhammadiyah Surakarta
+Angkatan: 2022
+Pekerjaan impian: Fullstack Web Developer
+
 Nama : abdillaah
 univ : Universitas Bina sarana informatika
 Jurusan : Teknologi Informasi
