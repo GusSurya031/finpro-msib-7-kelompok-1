@@ -1,0 +1,129 @@
+:root {
+    --main-color: #FFB085;
+    --hover-color: #FFA45B;
+    --second-color: #ffffff;
+    --main-text-color: #333333;
+    --hover-text-color: #ffffff;
+}
+
+#wrapper {
+    overflow-x: hidden;
+    position: relative;
+}
+
+#sidebar-wrapper {
+    position: fixed;
+    height: 100%;
+    width: 15rem;
+    margin-left: -15rem;
+    background-color: var(--main-color) !important;
+    transition: margin 0.3s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--main-text-color);
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: relative;
+    transition: all 0.3s ease-out;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    margin-left: 15rem;
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+    background-color: transparent;
+    color: var(--main-text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background-color: var(--hover-color) !important;
+    color: var(--hover-text-color) !important;
+}
+
+.list-group-item.active {
+    background-color: var(--hover-color) !important;
+    color: var(--hover-text-color) !important;
+    font-weight: bold;
+    border: none;
+}
+
+
+.db .card-title {
+    font-size: 1.25rem;
+}
+
+.db .card-text {
+    font-size: 1rem;
+}
+
+.db .course-img {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+}
+
+.img-act {
+    width: 250px;
+    height: 150px;
+
+}
+
+.web-img {
+    width: 50vh;
+    height: 250;
+}
+
+.db .progress-bar-custom {
+    background-color: #28a745;
+}
+
+.card-custom {
+    margin: 20px;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+
+    #page-content-wrapper {
+        margin-left: 15rem;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        margin-left: 0;
+    }
+}

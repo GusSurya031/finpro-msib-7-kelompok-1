@@ -11,3 +11,9 @@ Nama : abdillaah
 Jurusan : Teknologi Informasi
 Fakultas : Teknik dan Informatika
 Pekerjaan impian : Front end dev
+
+Nama : Hilham Yulistio
+Jurusan : Sistem Informasi
+Universitas : STMIK Jakarta STI&K
+Angkatan : 2022
+Cita-Cita : Fullstack Developer
