@@ -1,0 +1,19 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.active {
+    color: #F9F9F9;
+}
+
+.nav-links:hover:not(.active) {
+    color: #F9F9F9;
+}
+
+.dark-bg {
+    background-image: url('https://img.freepik.com/premium-photo/digitally-generated-image-binary-coding-data-processing-digital-tunnel-black-background_1134-5553.jpg');
+}
+
+.light-bg {
+    background-image: url('https://img.freepik.com/free-vector/digital-white-background-with-binary-code-numbers_1017-25335.jpg');
+}
