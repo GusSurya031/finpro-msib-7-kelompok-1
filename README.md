@@ -1,1 +1,5 @@
-# finpro-msib-7-kelompok-1
+# FASYALEARN DASHBOARD
+
+OPEN index.html TO OPEN APP
+
+THANKYOU
