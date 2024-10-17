@@ -30,3 +30,9 @@ Jurusan : Sistem Informasi
 Universitas : STMIK Jakarta STI&K
 Angkatan : 2022
 Cita-Cita : Fullstack Developer
+
+Nama : Damar Galih
+Jurusan : Informatika
+Universitas : Universitas Amikom Yogyakarta
+Angkatan : 2022
+Cita-Cita : Fullstack Developer
