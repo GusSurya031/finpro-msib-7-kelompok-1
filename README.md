@@ -36,3 +36,9 @@ Jurusan : Informatika
 Universitas : Universitas Amikom Yogyakarta
 Angkatan : 2022
 Cita-Cita : Fullstack Developer
+
+Nama : Muhammad Fadjar Yulianto
+Jurusan : Informatika
+Universitas : Universitas Sultan Ageng Tirtayasa
+Angkatan : 2021
+Cita-Cita : Backend Developer
