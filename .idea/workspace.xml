@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c83092f-0b18-48c5-ba51-b0adfe6dcaa5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/damar-homework/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/damar-homework/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/damar-homework/src/css/output.css" beforeDir="false" afterPath="$PROJECT_DIR$/damar-homework/src/css/output.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/damar-homework/src/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/damar-homework/src/js/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +73,7 @@
       <workItem from="1729184664864" duration="726000" />
       <workItem from="1729185669980" duration="414000" />
       <workItem from="1729263632009" duration="3377000" />
-      <workItem from="1729313537865" duration="1403000" />
+      <workItem from="1729313537865" duration="1762000" />
     </task>
     <servers />
   </component>
