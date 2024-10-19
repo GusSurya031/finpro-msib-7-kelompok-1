@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .container {
+        display: grid;
+        height: 100vh;
+        grid-template-areas:
+        "header header header header header header header header header header header header"
+        "nav nav nav nav nav nav nav nav nav nav nav nav"
+        "content content content promo promo promo promo promo promo promo promo promo"
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
+        grid-template-rows: 100px auto 100px;
+    }
+
+    .header {
+        background-color: purple;
+        grid-area: header;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .nav {
+        background-color: lightblue;
+        grid-area: nav;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .content {
+        background-color: grey;
+        grid-area: content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .promo {
+        background-color: burlywood;
+        grid-area: promo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .footer {
+        background-color: red;
+        grid-area: footer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .container {
+            grid-template-areas: 
+            "header header header header header header header header header header header header"
+            "nav nav content content content content content content content promo promo promo"
+            "footer footer footer footer footer footer footer footer footer footer footer footer";
+            grid-template-rows: 100px auto 100px;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .container {
+            grid-template-areas: 
+            "header header header header header header header header header header header header"
+            "nav nav content content content content content content content content content content"
+            "promo promo promo promo promo promo promo promo promo promo promo promo"
+            "footer footer footer footer footer footer footer footer footer footer footer footer";
+            grid-template-rows: 80px auto 80px 80px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .container {
+            grid-template-areas: 
+            "header header header header header header header header header header header header"
+            "nav nav nav nav nav nav nav nav nav nav nav nav"
+            "content content content content content content content content content content content content"
+            "promo promo promo promo promo promo promo promo promo promo promo promo"
+            "footer footer footer footer footer footer footer footer footer footer footer footer";
+            grid-template-rows: 60px auto auto 60px 60px;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="header"><h2>HEADER</h2></div>
+        <div class="nav"><h2>NAVBAR</h2></div>
+        <div class="content"><h2>CONTENT</h2></div>
+        <div class="promo"><h2>PROMO</h2></div>
+        <div class="footer"><h2>FOOTER</h2></div>
+    </div>
+</body>
+</html>
