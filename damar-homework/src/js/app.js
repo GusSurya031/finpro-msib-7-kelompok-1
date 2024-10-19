@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     menuItems.forEach(item => {
         item.addEventListener('click', function () {
             menuItems.forEach(i => {
-                i.classList.remove('text-color-pallet-denary');
+                i.classList.remove('text-color-pallet-denary', 'dark:text-color-pallet-primary');
                 i.classList.add('text-color-pallet-quinary');
             });
             this.classList.remove('text-color-pallet-quinary');
-            this.classList.add('text-color-pallet-denary');
+            this.classList.add('text-color-pallet-denary', 'dark:text-color-pallet-primary');
         });
     });
 });
@@ -64,3 +64,29 @@ btnUserClose.addEventListener('click', function () {
     userInfo.classList.add('hidden');
     overlayUserInfo.classList.add('hidden');
 });
+
+function setDarkMode() {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+    document.getElementById('light-btn').style.display = 'flex';
+    document.getElementById('dark-btn').style.display = 'none';
+}
+
+function setLightMode() {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+    document.getElementById('dark-btn').style.display = 'flex';
+    document.getElementById('light-btn').style.display = 'none';
+}
+
+window.onload = function () {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.getElementById('light-btn').style.display = 'flex';
+        document.getElementById('dark-btn').style.display = 'none';
+    } else {
+        document.documentElement.classList.remove('dark');
+        document.getElementById('dark-btn').style.display = 'flex';
+        document.getElementById('light-btn').style.display = 'none';
+    }
+};
