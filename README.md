@@ -48,3 +48,10 @@ Jurusan  : Informatika
 Universitas  : Universitas Amikom Yogyakarta
 Angkatan  : 2022
 Cita-cita  : UI/UX Designer atau Front-End Developer
+
+Nama : Tivany Aqlicia
+Jurusan : Teknik Komputer dan Informatika
+Program Studi : Manajemen Informatika
+Universitas : Politeknik Negeri Medan
+Angkatan : 2022
+Cita - cita : Fullstack Mobile Developer
