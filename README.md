@@ -42,3 +42,9 @@ Jurusan : Informatika
 Universitas : Universitas Sultan Ageng Tirtayasa
 Angkatan : 2021
 Cita-Cita : Backend Developer
+
+Nama  : Taufqi Kurniawan Akbar
+Jurusan  : Informatika
+Universitas  : Universitas Amikom Yogyakarta
+Angkatan  : 2022
+Cita-cita  : UI/UX Designer atau Front-End Developer
