@@ -55,3 +55,10 @@ Program Studi : Manajemen Informatika
 Universitas : Politeknik Negeri Medan
 Angkatan : 2022
 Cita - cita : Fullstack Mobile Developer
+
+Nama : Natasya Helmalia Putri
+Jurusan : Sistem Informasi
+Fakultas : Fakultas Ilmu Komputer
+Universitas : Universitas Pembangunan Nasional Veteran Jakarta
+Angkatan : 2022
+Cita - cita : UI/UX Designer atau Front-End Developer
