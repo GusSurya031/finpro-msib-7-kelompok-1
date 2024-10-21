@@ -58,3 +58,10 @@ Fakultas : Fakultas Ilmu Komputer
 Universitas : Universitas Pembangunan Nasional Veteran Jakarta
 Angkatan : 2022
 Cita - cita : UI/UX Designer atau Front-End Developer
+
+Nama: Anna Berttria Novem Budia 
+Jurusan: D4 Manajemen Informatika 
+Fakultas: Vokasi 
+Universitas: Universitas Negeri Surabaya 
+Angkatan: 2022 
+Cita-cita: Desain UI/UX Designer
